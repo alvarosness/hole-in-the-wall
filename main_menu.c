@@ -7,7 +7,7 @@ int main_menu(){
 	int col = COLS / 3;
 	
 	move(row, col);
-	addstr("Space Impact");
+	addstr("Hole in the Wall");
 		
 	move(row+1, col);
 	addstr("(S)ingle Player Mode");
