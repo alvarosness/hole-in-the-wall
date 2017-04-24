@@ -3,5 +3,5 @@
 
 int main_menu();
 void single_player_mode();
-void create_map();
+void create_map(char[][]);
 #endif
