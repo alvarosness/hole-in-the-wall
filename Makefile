@@ -14,7 +14,7 @@ create_map.o: create_map.c
 	cc -g -c create_map.c
 
 set_ticker.o: set_ticker.c
- 	cc -g -c set_ticker.c
+	cc -g -c set_ticker.c
 clean:
 	rm *.o
 	rm hole.wall
