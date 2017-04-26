@@ -27,7 +27,8 @@ void single_player_mode(){
    refresh();
   while(1){
     move = getch();
-    if (move == 'w'){
+
+   if (move == 'w'){
       clear();
       y--;
       if(y<0)
@@ -52,14 +53,16 @@ void single_player_mode(){
         x= COLS-1;
     }
 
+    for(map_x = 0; map_x < COLS; map_x++)
+      for(map_y = 0; map_y < LINES; map_y++)
+        mvaddch(map_y,map_x, map[map_y][map_x+count]);
+ 
+ 
       mvaddch(y,x,'>');
 
    
 
-    for(map_x = 0; map_x < COLS; map_x++)
-      for(map_y = 0; map_y < LINES; map_y++)
-        mvaddch(map_y,map_x, map[map_y][map_x+count]);
-    refresh();
+   refresh();
     count++;
     //sleep(1);
   }

@@ -7,6 +7,11 @@ void create_map(char map[][2000]){
   int col;
   int row, count;
 
+	for(col = 0; col < 2000; col++)
+		for(row = 0; row < LINES; row++)
+			map[row][col] = ' ';
+
+
   for(col = 0; col < 2000; col++)
   {
     if(col < 100)
@@ -59,9 +64,5 @@ void create_map(char map[][2000]){
         }
 		
   }
-
-//	for(col = 0; col < 2000; col++)
-//		for(row = 0; row < LINES; row++)
-//			map[row][col] = 'T';
 
 }
