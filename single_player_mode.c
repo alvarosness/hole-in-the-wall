@@ -74,6 +74,11 @@ void single_player_mode(){
    }
    refresh();
   
+  if(map[y][x + count] == '|'){
+    clear();
+    refresh();
+    break;
+  }
   
   }
 }
