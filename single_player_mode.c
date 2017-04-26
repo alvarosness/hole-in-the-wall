@@ -1,6 +1,8 @@
 #include "functions.h"
 #include <curses.h>
 
+int mvflag = 0;
+
 void move(int * x, int * y){
   num = rand() % 8;
   if (num == 0)
@@ -22,7 +24,7 @@ void single_player_mode(){
   create_map(map);
   x=0;
   y=0;
-  signal(SIGALRM, alarm);
+  signal(SIGALRM, on_alarm);
   set_ticker(delay);
   
    mvaddch(y,x,'>');
@@ -61,12 +63,14 @@ void single_player_mode(){
         mvaddch(y,x,map[map_x][map_y]);
     refresh()
     
+    if (mvflag == 1){
+      /*MOVE MAP HERE*/
+     mvflag = 0; 
+    }
+    }
 
   }
 }
-void alarm (int signum){
-  
-  
-  
-  
+void on_alarm (int signum){
+  mvflag = 1;
 }
