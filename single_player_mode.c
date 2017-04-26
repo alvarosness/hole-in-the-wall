@@ -35,8 +35,9 @@ void single_player_mode(){
    mvaddch(y,x,'>');
    refresh();
   while(1){
+    if(khbit()){
     move = getch();
-
+    }
    if (move == 'w'){
       clear();
       y--;
