@@ -64,10 +64,10 @@ void single_player_mode(){
     
     refresh()
     
-    count++;
+   
     
     if (mvflag == 1){
-      /*MOVE MAP HERE*/
+       count++;
      mvflag = 0; 
     }
     }
