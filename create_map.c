@@ -8,7 +8,7 @@ void create_map(char map[][2000]){
   int col;
   int row, count;
   int start_x, start_y;
-  char entry[] = "Press Any Key to Begin"  
+  char entry[] = "Press Any Key to Begin";
   start_x = COLS / 2 - 11;
   start_y = LINES / 2;
 
