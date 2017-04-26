@@ -18,6 +18,9 @@ void move_something(int * x, int * y){
 }
 
 void single_player_mode(){
+  cbreak();
+  nodelay(stdscr, TRUE);
+  scrollok(stdscr, TRUE);
   void on_alarm(int);
   mvflag = 0;
   clear();
