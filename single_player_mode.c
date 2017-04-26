@@ -18,6 +18,7 @@ void move_something(int * x, int * y){
 }
 
 void single_player_mode(){
+  cbreak();
   void on_alarm(int);
   mvflag = 0;
   clear();
@@ -35,9 +36,7 @@ void single_player_mode(){
    mvaddch(y,x,'>');
    refresh();
   while(1){
-    if(kbhit()){
     move = getch();
-    }
    if (move == 'w'){
       clear();
       y--;
