@@ -4,7 +4,7 @@
 #include <signal.h>
 #include <sys/time.h>
 
-int mvflag = 0;
+int mvflag;
 
 void move_something(int * x, int * y){
   int num = rand() % 8;
@@ -19,6 +19,7 @@ void move_something(int * x, int * y){
 
 void single_player_mode(){
   void on_alarm(int);
+  mvflag = 0;
   clear();
   char move;
   char map[LINES][2000];
