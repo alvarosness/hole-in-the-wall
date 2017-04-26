@@ -11,7 +11,7 @@ void create_map(char** map){
     if(col < 100)
       if (col % 10 == 0 )
       {
-        for( row = 0; row < COLS; row++)
+        for( row = 0; row < LINES; row++)
           map[row][col] = '|';
         for(count = 0; count < 5; count++)
           map[rand()%LINES][col] = ' ';
