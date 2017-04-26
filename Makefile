@@ -12,6 +12,7 @@ single_player_mode.o: single_player_mode.c
 
 create_map.o: create_map.c
 	cc -g -c create_map.c
+
 set_ticker.o: set_ticker.c
  	cc -g -c set_ticker.c
 clean:
