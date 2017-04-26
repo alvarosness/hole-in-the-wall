@@ -1,6 +1,7 @@
 #include "functions.h"
 #include <curses.h>
 #include <stdlib.h>
+#include <signal.h>
 
 int mvflag = 0;
 
@@ -16,6 +17,7 @@ void move_something(int * x, int * y){
 }
 
 void single_player_mode(){
+  void on_alarm(int);
   clear();
   char move;
   char map[LINES][2000];
