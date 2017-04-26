@@ -27,7 +27,7 @@ void single_player_mode(){
   char map[LINES][2000];
   int x, map_x;
   int y, map_y;
-  int delay = 200;
+  int delay = 2000;
   int count = 0;
   create_map(map);
   x=0;
