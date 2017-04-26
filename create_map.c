@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 void create_map(char map[][2000]){
-  long col;
+  int col;
   int row, count;
 
   for(col = 0; col < 2000; col++)
@@ -57,6 +57,11 @@ void create_map(char map[][2000]){
           for(count = 0; count < 2; count++)
             map[rand()%LINES][col] = ' ';
         }
+		
   }
+
+//	for(col = 0; col < 2000; col++)
+//		for(row = 0; row < LINES; row++)
+//			map[row][col] = 'T';
 
 }

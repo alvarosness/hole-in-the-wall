@@ -19,6 +19,7 @@ void single_player_mode(){
   char map[LINES][2000];
   int x, map_x;
   int y, map_y;
+  int count = 0;
   create_map(map);
   x=0;
   y=0;
@@ -53,11 +54,13 @@ void single_player_mode(){
 
       mvaddch(y,x,'>');
 
+   
+
     for(map_x = 0; map_x < COLS; map_x++)
       for(map_y = 0; map_y < LINES; map_y++)
-        mvaddch(y,x,map[map_x][map_y]);
+        mvaddch(map_y,map_x, map[map_y][map_x+count]);
     refresh();
-
+    count++;
     //sleep(1);
   }
 }
