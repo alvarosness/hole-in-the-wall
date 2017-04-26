@@ -18,8 +18,6 @@ void move_something(int * x, int * y){
 }
 
 void single_player_mode(){
-  nodelay(stdscr, TRUE);
-  cbreak();
   void on_alarm(int);
   mvflag = 0;
   clear();
