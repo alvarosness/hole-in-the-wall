@@ -20,6 +20,7 @@ void single_player_mode(){
   char map[ROWS][2000];
   int x, map_x;
   int y, map_y;
+  int count = 0;
   int delay = 200;
   create_map(map);
   x=0;
@@ -55,13 +56,15 @@ void single_player_mode(){
       if(x>COLS-1)
         x= COLS-1;
     }
-    
-      mvaddch(y,x,'>');
-    
     for(map_x = 0; map_x < COLS; map_x++)
       for(map_y = 0; map_y < ROWS; map_y++)
-        mvaddch(y,x,map[map_x][map_y]);
+        mvaddch(y,x,map[map_y][map_x + count]);
+      mvaddch(y,x,'>');
+    
+    
     refresh()
+    
+    count++;
     
     if (mvflag == 1){
       /*MOVE MAP HERE*/
