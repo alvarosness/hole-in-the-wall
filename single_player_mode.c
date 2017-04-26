@@ -75,5 +75,6 @@ void single_player_mode(){
   }
 }
 void on_alarm(int signum){
+  signal(SIGALRM, on_alarm);
   mvflag = 1;
 }
