@@ -1,6 +1,7 @@
 //create_map.c
 #include "functions.h"
 #include <curses.h>
+#include <stdlib.h>
 
 void create_map(char** map){
   long col;
