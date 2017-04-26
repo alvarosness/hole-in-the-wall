@@ -2,6 +2,7 @@
 #include <curses.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <sys/time.h>
 
 int mvflag = 0;
 
