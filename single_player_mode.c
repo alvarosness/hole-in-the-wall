@@ -18,9 +18,13 @@ void single_player_mode(){
   char map[ROWS][2000];
   int x, map_x;
   int y, map_y;
+  int delay = 200;
   create_map(map);
   x=0;
   y=0;
+  signal(SIGALRM, alarm);
+  set_ticker(delay);
+  
    mvaddch(y,x,'>');
    refresh();
   while(1){
@@ -57,6 +61,12 @@ void single_player_mode(){
         mvaddch(y,x,map[map_x][map_y]);
     refresh()
     
-    sleep(.25);
+
   }
+}
+void alarm (int signum){
+  
+  
+  
+  
 }
