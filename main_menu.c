@@ -21,6 +21,9 @@ int main_menu(){
 	move(row+4, col);
 	addstr("(A)bout");
 
+	move(row+5, col);
+	addstr("(Q)uit");
+
 	move(LINES-1,0);
 
 	return getch();

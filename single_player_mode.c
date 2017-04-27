@@ -91,6 +91,9 @@ void single_player_mode(){
   }
 
   }
+
+  // Ignore alarms once the game ends
+  signal(SIGALRM, SIG_IGN);
 }
 
 void score_to_string(char * str, int score){

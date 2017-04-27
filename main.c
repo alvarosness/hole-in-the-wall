@@ -13,18 +13,20 @@ int main(int argc, char** argv){
 		menu_option = main_menu();
 		if(menu_option == 'S' || menu_option == 's'){
 			single_player_mode();
-			keepgoing =0;
 		}
 		else if(menu_option == 'C' || menu_option == 'c'){
-			keepgoing = 0;
+
 		}
 		else if(menu_option == 'D' || menu_option == 'd'){
-			keepgoing = 0;
+
 		}
-		else if(menu_option == 'A' || menu_option == 'A'){
+		else if(menu_option == 'A' || menu_option == 'a'){
+			credits();
+		}
+		else if(menu_option == 'Q' || menu_option == 'q'){
 			keepgoing = 0;
 		}
 	}
-	
+
 	endwin();
 }
