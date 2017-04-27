@@ -6,25 +6,11 @@
 
 int mvflag;
 
-void move_something(int * x, int * y){
-  int num = rand() % 8;
-  if (num == 0)
-    y--;
-
-  else if(num == 1)
-    y++;
-
-  x--;
-}
-
 void single_player_mode(){
 
-  // char separator[COLS];
   int i;
-  //
-  // for(i = 0; i < COLS-1; i++)
-  //   separator[i] = '-';
-  // separator[i] = '\0';
+  char score_str[4];
+  int score = 0;
 
   cbreak();
   nodelay(stdscr, TRUE);
@@ -82,10 +68,17 @@ void single_player_mode(){
     for(i = 0; i < COLS; i++)
       mvaddch(1, i, '_');
 
+    mvaddstr(0, COLS/2 - 10, "Hole In The Wall");
+
+    mvaddstr(0, COLS - 10, "Score: ");
+    score_to_string(score_str, score);
+    mvaddstr(0, COLS - 4, score_str);
+
     mvaddch(y,x,'>');
 
    if(mvflag == 1){
      count++;
+     score++;
      mvflag = 0;
    }
    refresh();
@@ -100,6 +93,19 @@ void single_player_mode(){
   }
 }
 
+void score_to_string(char * str, int score){
+  int ones, tens, hundreds;
+
+  ones = score % 10;
+  score = score / 10;
+  tens = score % 10;
+  score = score / 10;
+  hundreds = score % 10;
+
+  str[0] = 0x30 + hundreds;
+  str[1] = 0x30 + tens;
+  str[2] = 0x30 + ones;
+}
 
 void on_alarm(int signum){
   signal(SIGALRM, on_alarm);
