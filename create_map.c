@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define WALL_SPRITE 178
+
 void create_map(char map[][2000]){
   int col;
   int row, count;
@@ -15,7 +17,7 @@ void create_map(char map[][2000]){
 	for(col = 0; col < 2000; col++)
 		for(row = 0; row < LINES; row++)
 			map[row][col] = ' ';
-			
+
   for(col = 0; col < 22; col++)
      map[start_y][start_x + col] = *(entry + col);
 
@@ -24,12 +26,12 @@ void create_map(char map[][2000]){
     if(col < COLS){
     	;
     }
-    
+
     else if(col < 100){
       if (col % 10 == 0 )
       {
         for( row = 3; row < LINES; row++)
-          map[row][col] = '|';
+          map[row][col] = WALL_SPRITE;
         for(count = 0; count < 5; count++)
           map[rand()%LINES][col] = ' ';
       }
@@ -38,7 +40,7 @@ void create_map(char map[][2000]){
       if (col % 10 == 0 )
         {
           for( row = 3; row < LINES; row++)
-            map[row][col] = '|';
+            map[row][col] = WALL_SPRITE;
           for(count = 0; count < 4; count++)
             map[rand()%LINES][col] = ' ';
         }
@@ -47,7 +49,7 @@ void create_map(char map[][2000]){
       if (col % 8 == 0 )
         {
           for( row = 3; row < LINES; row++)
-            map[row][col] = '|';
+            map[row][col] = WALL_SPRITE;
           for(count = 0; count < 4; count++)
             map[rand()%LINES][col] = ' ';
         }
@@ -56,7 +58,7 @@ void create_map(char map[][2000]){
       if (col % 8 == 0 )
         {
           for( row = 3; row < LINES; row++)
-            map[row][col] = '|';
+            map[row][col] = WALL_SPRITE;
           for(count = 0; count < 3; count++)
             map[rand()%LINES][col] = ' ';
         }
@@ -65,7 +67,7 @@ void create_map(char map[][2000]){
       if (col % 6 == 0 )
         {
           for( row = 3; row < LINES; row++)
-            map[row][col] = '|';
+            map[row][col] = WALL_SPRITE;
           for(count = 0; count < 4; count++)
             map[rand()%LINES][col] = ' ';
         }
@@ -74,12 +76,12 @@ void create_map(char map[][2000]){
       if (col % 5 == 0 )
         {
           for( row = 3; row < LINES; row++)
-            map[row][col] = '|';
+            map[row][col] = WALL_SPRITE;
           for(count = 0; count < 2; count++)
             map[rand()%LINES][col] = ' ';
         }
     }
-		
+
   }
 
 }

@@ -2,13 +2,13 @@
 
 int main_menu(){
 	clear();
-	
+
 	int row = LINES / 3;
 	int col = COLS / 3;
-	
+
 	move(row, col);
 	addstr("Hole in the Wall");
-		
+
 	move(row+1, col);
 	addstr("(S)ingle Player Mode");
 
@@ -19,7 +19,7 @@ int main_menu(){
 	addstr("(D)eathmatch");
 
 	move(row+4, col);
-	addstr("(C)redits");
+	addstr("(A)bout");
 
 	move(LINES-1,0);
 

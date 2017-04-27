@@ -18,6 +18,14 @@ void move_something(int * x, int * y){
 }
 
 void single_player_mode(){
+
+  // char separator[COLS];
+  int i;
+  //
+  // for(i = 0; i < COLS-1; i++)
+  //   separator[i] = '-';
+  // separator[i] = '\0';
+
   cbreak();
   nodelay(stdscr, TRUE);
   scrollok(stdscr, TRUE);
@@ -37,6 +45,7 @@ void single_player_mode(){
   set_ticker(delay);
    mvaddch(y,x,'>');
    refresh();
+
   while(1){
     move = getch();
    if (move == 'w'){
@@ -64,25 +73,34 @@ void single_player_mode(){
         x= COLS-1;
     }
 
-    for(map_x = 0; map_x < COLS; map_x++)
-      for(map_y = 0; map_y < LINES; map_y++)
+    for(map_x = 0; map_x < COLS; map_x++){
+      for(map_y = 0; map_y < LINES; map_y++){
         mvaddch(map_y,map_x, map[map_y][map_x+count]);
-        mvaddch(y,x,'>');
+      }
+    }
+
+    for(i = 0; i < COLS; i++)
+      mvaddch(1, i, '_');
+
+    mvaddch(y,x,'>');
 
    if(mvflag == 1){
      count++;
      mvflag = 0;
    }
    refresh();
-  
-  if(map[y+1][x + count] == '|'){
+
+   // Collision Detection
+  if(map[y+1][x + count] == 178){
     clear();
     refresh();
     break;
   }
-  
+
   }
 }
+
+
 void on_alarm(int signum){
   signal(SIGALRM, on_alarm);
   mvflag = 1;
