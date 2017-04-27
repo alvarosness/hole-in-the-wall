@@ -5,4 +5,5 @@ int main_menu();
 void single_player_mode();
 void create_map(char[][2000]);
 void set_ticker(int);
+void credits(void);
 #endif
