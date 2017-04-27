@@ -84,7 +84,7 @@ void single_player_mode(){
    refresh();
 
    // Collision Detection
-  if(map[y+1][x + count] == 178){
+  if(map[y+1][x + count] != ' '){
     clear();
     refresh();
     break;
