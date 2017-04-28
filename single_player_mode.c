@@ -104,6 +104,9 @@ void single_player_mode(){
 
   // Ignore alarms once the game ends
   signal(SIGALRM, SIG_IGN);
+  nocbreak();
+  nodelay(stdscr, FALSE);
+  scrollok(stdscr, FALSE);
 }
 
 void score_to_string(char * str, int score){
@@ -130,6 +133,8 @@ void save_score(char * score){
   char initials [4];
   char input;
   int i;
+  
+  echo();
   
   scorebrd = open("scoreboard.txt", O_APPEND);
       if (fgets(pastScore, 3, scorebrd) == NULL){
@@ -171,5 +176,7 @@ void save_score(char * score){
             fputs(score + initials);
       }
   }
+  
+  noecho();
 
 }
