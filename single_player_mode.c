@@ -4,6 +4,7 @@
 #include <signal.h>
 #include <sys/time.h>
 #include <fcntl.h>
+#include <string.h>
 
 int mvflag;
 
@@ -123,13 +124,22 @@ void on_alarm(int signum){
   signal(SIGALRM, on_alarm);
   mvflag = 1;
 }
-void save_score(int score){
+void save_score(char * score){
+  FILE *scorebrd;
+  char pastScore[4];
+  int i;
+  scorebrd = open("scoreboard.txt", O_RDWR);
+  for (i=0; i<5;i++){
+    if(fgets (pastScore, 3, scorebrd) == NULL)
+      fputs(score)
+    else
+      if(strcmp(score, pastScore) < 0){   //less that previous score
+      }      
+      if else(strcmp(score, pastScore)>0){ //higher than previous score
+      }
+      else
+        
   
-  
-  
-  
-  
-  
-  
+  }
 
 }
