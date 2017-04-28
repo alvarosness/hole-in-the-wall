@@ -39,7 +39,7 @@ void single_player_mode(){
       clear();
       y--;
       if(y<2)
-        y=3;
+        y=2;
     }
     else if(move == 's'){
       clear();
