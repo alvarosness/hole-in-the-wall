@@ -1,7 +1,7 @@
 #include "functions.h"
 #include <curses.h>
 #include <signal.h>
-
+//credits for program
 char msg[][100] = {"HOLE IN THE WALL",
                     "",
                     "Developed by:",
@@ -23,19 +23,19 @@ void credits(){
   c_row = LINES;
   c_col = COLS / 3;
 
-  signal(SIGALRM, roll_credits);
-  set_ticker(1000);
+  signal(SIGALRM, roll_credits); //set up a timer functions
+  set_ticker(1000); 
 
   clear();
 
-  while(!c_done)
+  while(!c_done) //check done flag
     continue;
 
   signal(SIGALRM, SIG_IGN);
 
 }
 
-void roll_credits(int signum){
+void roll_credits(int signum){ //move strings up after ticker triggers alarm signal
   signal(SIGALRM, roll_credits);
   clear();
 
@@ -61,6 +61,6 @@ void roll_credits(int signum){
   
   refresh();
 
-  if(c_row <= 0)
+  if(c_row <= 0)  //set done flag
     c_done = 1;
 }
