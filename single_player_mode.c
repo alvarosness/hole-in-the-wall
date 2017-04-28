@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <sys/time.h>
-#include <fcntl.h>
+
 
 int mvflag;
 
@@ -103,6 +103,13 @@ void single_player_mode(){
 
   // Ignore alarms once the game ends
   signal(SIGALRM, SIG_IGN);
+  clear();
+  move(LINES/3, COLS/3);
+  addstr("Congrats your score is: ");
+  addstr(score_str);
+  refresh();
+  sleep(2)
+
 }
 
 void score_to_string(char * str, int score){
@@ -123,14 +130,4 @@ void score_to_string(char * str, int score){
 void on_alarm(int signum){
   signal(SIGALRM, on_alarm);
   mvflag = 1;
-}
-void save_score(int score){
-  
-  
-  
-  
-  
-  
-  
-
 }
