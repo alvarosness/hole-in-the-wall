@@ -43,8 +43,8 @@ void single_player_mode(){
     else if(move == 's'){
       clear();
       y++;
-      if(y>LINES-1)
-        y= LINES-1;
+      if(y>LINES-2)
+        y= LINES-2;
     }
     else if(move =='a'){
       clear();
