@@ -6,7 +6,7 @@ int main_menu(){
 	int row = LINES / 3;
 	int col = COLS / 3;
 
-	move(row, col);
+	move(row, col);			//display title and user options
 	addstr("Hole in the Wall");
 
 	move(row+1, col);
