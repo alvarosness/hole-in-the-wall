@@ -10,7 +10,7 @@ char msg[][100] = {"HOLE IN THE WALL",
                     "An Idiot (Johnathon Schroeder)",
                     "Another Idiot (Alvaro Esperanca)",
                     "",
-                    "Thanks Shia LeBeouf"
+                    "Thanks Shia LeBeouf" /*memes : https://www.youtube.com/watch?v=ZXsQAXx_ao0 */
 };
 
 int c_done = 0;
