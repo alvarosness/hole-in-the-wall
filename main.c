@@ -15,7 +15,7 @@ int main(int argc, char** argv){
 			single_player_mode();
 		}
 		else if(menu_option == 'S' || menu_option == 's'){
-
+			scoreboard();
 		}
 		else if(menu_option == 'C' || menu_option == 'c'){
 			credits();
