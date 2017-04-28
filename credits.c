@@ -2,7 +2,16 @@
 #include <curses.h>
 #include <signal.h>
 
-char msg[][100] = {"Another Idiot (Alvaro Esperanca)","An Idiot (Johnathon Schroeder)","A Troll (Trevor Farkas)","","Developed by:","", "HOLE IN THE WALL"};
+char msg[][100] = {"HOLE IN THE WALL",
+                    "",
+                    "Developed by:",
+                    "",
+                    "A Troll (Trevor Farkas)",
+                    "An Idiot (Johnathon Schroeder)",
+                    "Another Idiot (Alvaro Esperanca)",
+                    "",
+                    "Thanks Shia LeBeouf"
+};
 
 int c_done = 0;
 int c_row;
@@ -45,7 +54,11 @@ void roll_credits(int signum){
   addstr(msg[5]);
   move(c_row+6, c_col);
   addstr(msg[6]);
-
+  move(c_row+7, c_col);
+  addstr(msg[7]);
+  move(c_row+8, c_col);
+  addstr(msg[8]);
+  
   refresh();
 
   if(c_row <= 0)
