@@ -104,9 +104,6 @@ void single_player_mode(){
 
   // Ignore alarms once the game ends
   signal(SIGALRM, SIG_IGN);
-  nocbreak();
-  nodelay(stdscr, FALSE);
-  scrollok(stdscr, FALSE);
   save_score(score_str);
 }
 
