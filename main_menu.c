@@ -10,18 +10,15 @@ int main_menu(){
 	addstr("Hole in the Wall");
 
 	move(row+1, col);
-	addstr("(S)ingle Player Mode");
+	addstr("(P)lay");
 
 	move(row+2, col);
-	addstr("(C)o-op Mode");
+	addstr("(S)coreboard");
 
 	move(row+3, col);
-	addstr("(D)eathmatch");
+	addstr("(C)redits");
 
 	move(row+4, col);
-	addstr("(A)bout");
-
-	move(row+5, col);
 	addstr("(Q)uit");
 
 	move(LINES-1,0);
