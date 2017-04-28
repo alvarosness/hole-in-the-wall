@@ -29,7 +29,7 @@ void single_player_mode(){
   int count = 0;
   create_map(map);
   
-  for(col = 0; col < 22; col++)
+  for(col = 0; col < 20; col++)
      mvaddch(LINES / 2, COLS / 2 - 11 + col, *(entry + col));
   
   x=0;
