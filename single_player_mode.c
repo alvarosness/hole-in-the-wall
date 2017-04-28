@@ -117,6 +117,7 @@ void score_to_string(char * str, int score){
   str[0] = 0x30 + hundreds;
   str[1] = 0x30 + tens;
   str[2] = 0x30 + ones;
+  str[3] = '\0';
 }
 
 void on_alarm(int signum){
