@@ -21,3 +21,5 @@ credits.o: credits.c
 clean:
 	rm *.o
 	rm hole.wall
+run:
+	./hole.wall
