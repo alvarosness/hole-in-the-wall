@@ -127,14 +127,48 @@ void on_alarm(int signum){
 void save_score(char * score){
   int scorebrd;
   char pastScore[4];
+  char initials [4];
+  char input;
   int i;
   
   scorebrd = open("scoreboard.txt", O_APPEND);
-      if (fgets(pastScore, 3, scorebrd) == NULL)
-          fputs(score)
+      if (fgets(pastScore, 3, scorebrd) == NULL){
+         clear();
+          mvaddstr(LINES/3, COLS/2 - 10, "Congratulations! You have beaten the high score! Please enter your initials");
+          mvaddstr(LINES/3+1, COLS/2 - 10, "First Letter:");
+          refresh();
+          input = getch();
+          initials[0] = input;
+          mvaddstr(LINES/3+2, COLS/2 - 10, "Second Letter:");
+          refresh();
+          input = getch();
+          initials[1] = input;
+          mvaddstr(LINES/3+3, COLS/2 - 10, "Third Letter:");
+          refresh();
+          input = getch();
+          initials[2] = input;
+          clear();
+          fputs(score + initials);
+          
+      }
       else{
-          if(strcmp(score, pastScore) >0 || stcmp(score, pastScore) == 0)
-            fputs(score)
+          if(strcmp(score, pastScore) >0 || stcmp(score, pastScore) == 0){
+            clear();
+            mvaddstr(LINES/3, COLS/2 - 10, "Congratulations! You have beaten the high score! Please enter your initials");
+            mvaddstr(LINES/3+1, COLS/2 - 10, "First Letter:");
+            refresh();
+            input = getch();
+            initials[0] = input;
+            mvaddstr(LINES/3+2, COLS/2 - 10, "Second Letter:");
+            refresh();
+            input = getch();
+            initials[1] = input;
+            mvaddstr(LINES/3+3, COLS/2 - 10, "Third Letter:");
+            refresh();
+            input = getch();
+            initials[2] = input;
+            clear();
+            fputs(score + initials);
       }
   }
 
