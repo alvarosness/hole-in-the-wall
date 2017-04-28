@@ -5,11 +5,11 @@ int main(int argc, char** argv){
 	char menu_option;
 	int keepgoing = 1;
 
-	initscr();
-	crmode();
+	initscr();	//setting up window
+	crmode();	//setting attributes
 	noecho();
 	curs_set(FALSE);
-	while (keepgoing == 1){
+	while (keepgoing == 1){		//directing the program to a function based off user input
 		menu_option = main_menu();
 		if(menu_option == 'P' || menu_option == 'p'){
 			single_player_mode();
@@ -22,5 +22,5 @@ int main(int argc, char** argv){
 		}
 	}
 
-	endwin();
+	endwin(); //closing window
 }
