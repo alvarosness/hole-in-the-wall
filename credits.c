@@ -15,7 +15,7 @@ void credits(){
   c_col = COLS / 3;
 
   signal(SIGALRM, roll_credits);
-  set_ticker(500);
+  set_ticker(1000);
 
   clear();
 
@@ -48,6 +48,6 @@ void roll_credits(int signum){
 
   refresh();
 
-  if(c_row <= -6)
+  if(c_row <= 0)
     c_done = 1;
 }
