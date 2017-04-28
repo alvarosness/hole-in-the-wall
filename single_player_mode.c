@@ -128,17 +128,8 @@ void save_score(char * score){
   int scorebrd;
   char pastScore[4];
   int i;
-  scorebrd = open("scoreboard.txt", O_RDWR);
-  for (i=0; i<5;i++){
-    if(fgets (pastScore, 3, scorebrd) == NULL)
+  scorebrd = open("scoreboard.txt", O_APPEND);
       fputs(score)
-    else
-      if(strcmp(score, pastScore) < 0){   //less that previous score
-      }      
-      if else(strcmp(score, pastScore)>0){ //higher than previous score
-      }
-      else
-        
   
   }
 
