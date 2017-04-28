@@ -20,18 +20,25 @@ void single_player_mode(){
   mvflag = 0;
   clear();
   char move;
+  char entry[] = "Press space to begin";
   char map[LINES][2000];
   int x, map_x;
   int y, map_y;
   int delay = 250;
   int count = 0;
   create_map(map);
+  
+  for(col = 0; col < 22; col++)
+     mvaddch(LINES / 2, COLS / 2 - 11 + col) = *(entry + col);
+  
   x=0;
-  y=0;
+  y=2;
   signal(SIGALRM, on_alarm);
   set_ticker(delay);
    mvaddch(y,x,'>');
    refresh();
+
+  while(getch() != ' ');
 
   while(1){
     move = getch();
