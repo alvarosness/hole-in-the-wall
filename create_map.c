@@ -14,17 +14,19 @@ void create_map(char map[][2000]){
   start_x = COLS / 2 - 11;
   start_y = LINES / 2;
 
-	for(col = 0; col < 2000; col++)
-		for(row = 0; row < LINES; row++)
-			map[row][col] = ' ';
+  // Setting the initial values of the map to blank space
+  for(col = 0; col < 2000; col++)
+     for(row = 0; row < LINES; row++)
+ 	map[row][col] = ' ';
 
 
   for(col = 0; col < 2000; col++)
   {
+    // First Portion of the map. Has no Walls
     if(col < COLS){
     	;
     }
-
+    // Creating walls with a spacing of 10
     else if(col < 100){
       if (col % 10 == 0 )
       {
@@ -34,6 +36,7 @@ void create_map(char map[][2000]){
           map[rand()%LINES][col] = ' ';
       }
     }
+    // Creating walls with a spacing of 10
     else if(col <200){
       if (col % 10 == 0 )
         {
@@ -43,6 +46,7 @@ void create_map(char map[][2000]){
             map[rand()%LINES][col] = ' ';
         }
     }
+    // Creating walls with a spacing of 8
     else if(col <300){
       if (col % 8 == 0 )
         {
@@ -52,6 +56,7 @@ void create_map(char map[][2000]){
             map[rand()%LINES][col] = ' ';
         }
     }
+    // Creating walls with a spacing of 8
     else if(col <400){
       if (col % 8 == 0 )
         {
@@ -61,6 +66,7 @@ void create_map(char map[][2000]){
             map[rand()%LINES][col] = ' ';
         }
     }
+    // Creating walls with spacing of 6
     else if(col <600){
       if (col % 6 == 0 )
         {
@@ -70,6 +76,7 @@ void create_map(char map[][2000]){
             map[rand()%LINES][col] = ' ';
         }
     }
+    // Creating walls with spacing of 5
     else if(col <1000){
       if (col % 5 == 0 )
         {
