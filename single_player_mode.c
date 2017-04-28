@@ -131,7 +131,9 @@ void save_score(char * score){
   char initials [4];
   char input;
   int i;
-  
+  nocbreak();
+  nodelay(stdscr, FALSE);
+  scrollok(stdscr, FALSE);
   echo();
   
   scorebrd = open("scoreboard.txt", O_RDWR | O_CREAT);
@@ -184,5 +186,8 @@ void save_score(char * score){
   }
   
   noecho();
+  cbreak();
+  nodelay(stdscr, TRUE);
+  scrollok(stdscr, TRUE);
 
 }
