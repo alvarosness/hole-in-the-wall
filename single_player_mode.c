@@ -107,6 +107,7 @@ void single_player_mode(){
   nocbreak();
   nodelay(stdscr, FALSE);
   scrollok(stdscr, FALSE);
+  save_score(score_str);
 }
 
 void score_to_string(char * str, int score){
