@@ -12,7 +12,8 @@ void single_player_mode(){
   int i;
   char score_str[4];
   int score = 0;
-
+  int col;
+  
   cbreak();
   nodelay(stdscr, TRUE);
   scrollok(stdscr, TRUE);
@@ -29,7 +30,7 @@ void single_player_mode(){
   create_map(map);
   
   for(col = 0; col < 22; col++)
-     mvaddch(LINES / 2, COLS / 2 - 11 + col), *(entry + col);
+     mvaddch(LINES / 2, COLS / 2 - 11 + col, *(entry + col));
   
   x=0;
   y=2;
