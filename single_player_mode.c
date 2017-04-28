@@ -128,9 +128,14 @@ void save_score(char * score){
   int scorebrd;
   char pastScore[4];
   int i;
-  scorebrd = open("scoreboard.txt", O_APPEND);
-      fputs(score)
   
+  scorebrd = open("scoreboard.txt", O_APPEND);
+      if (fgets(pastScore, 3, scorebrd) == NULL)
+          fputs(score)
+      else{
+          if(strcmp(score, pastScore) >0 || stcmp(score, pastScore) == 0)
+            fputs(score)
+      }
   }
 
 }
