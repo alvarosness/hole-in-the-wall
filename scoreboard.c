@@ -3,8 +3,8 @@
 
 void scoreboard(){
   clear();
-  int row = LINES/2;
-  int col = COLS/2;
+  int row = LINES/3;
+  int col = COLS/3;
   
   mvaddstr(row, col, "TOP SCORES");
   mvaddstr(row+1, col, "1.1738");
