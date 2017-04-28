@@ -23,23 +23,23 @@ void credits(){
   c_row = LINES;
   c_col = COLS / 3;
 
-  signal(SIGALRM, roll_credits);
+  signal(SIGALRM, roll_credits); //set signal handler and timer for alarm signal
   set_ticker(1000);
 
   clear();
 
-  while(!c_done)
+  while(!c_done)  //check done flag
     continue;
 
-  signal(SIGALRM, SIG_IGN);
+  signal(SIGALRM, SIG_IGN); //ignore alarm signal once done
 
 }
 
 void roll_credits(int signum){
-  signal(SIGALRM, roll_credits);
+  signal(SIGALRM, roll_credits);  
   clear();
 
-  c_row--;
+  c_row--;      //move text
   move(c_row+0, c_col);
   addstr(msg[0]);
   move(c_row+1, c_col);
@@ -61,6 +61,6 @@ void roll_credits(int signum){
   
   refresh();
 
-  if(c_row <= 0)
+  if(c_row <= 0) //if at the top trigger done flag
     c_done = 1;
 }
