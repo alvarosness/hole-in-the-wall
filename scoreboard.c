@@ -22,7 +22,7 @@ void scoreboard(){
 int read_score(char * str){
   FILE * fd;
   
-  fd = fopen("", "r");
+  fd = fopen("scoreboard.txt", "r");
   
   if(fd == NULL)
     return 0;
