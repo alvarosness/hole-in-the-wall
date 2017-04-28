@@ -1,5 +1,5 @@
 #include <curses.h>
-
+//menu showing all options for user
 int main_menu(){
 	clear();
 
