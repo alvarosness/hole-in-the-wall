@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <sys/time.h>
+#include <file.h>
 
 int mvflag;
 
@@ -113,4 +114,14 @@ void score_to_string(char * str, int score){
 void on_alarm(int signum){
   signal(SIGALRM, on_alarm);
   mvflag = 1;
+}
+void save_score(int score){
+  
+  
+  
+  
+  
+  
+  
+
 }
