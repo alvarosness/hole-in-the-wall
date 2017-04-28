@@ -162,7 +162,7 @@ void save_score(char * score){
           
       }
       else{
-          if(strcmp(score, pastScore) >0 || stcmp(score, pastScore) == 0){
+          if(strcmp(score, pastScore) >0 || strcmp(score, pastScore) == 0){
             clear();
             mvaddstr(LINES/3, COLS/2 - 10, "Congratulations! You have beaten the high score! Please enter your initials");
             mvaddstr(LINES/3+1, COLS/2 - 10, "First Letter:");
