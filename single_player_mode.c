@@ -137,7 +137,7 @@ void save_score(char * score){
   
   echo();
   
-  scorebrd = open("scoreboard.txt", O_RDWR);
+  scorebrd = open("scoreboard.txt", O_RDWR | O_CREAT);
       if (read(scorebrd, pastScore, 4*sizeof(char)) == NULL){
          clear();
           mvaddstr(LINES/3, COLS/2 - 10, "Congratulations! You have beaten the high score! Please enter your initials");
