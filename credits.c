@@ -2,7 +2,7 @@
 #include <curses.h>
 #include <signal.h>
 
-char msg[][100] = {"ECE 28200","BS 1 Credit Hour Class", "I wanna light farts on fire!"};
+char msg[][100] = {"Another Idiot (Alvaro Esperanca)","","An Idiot (Johnathon Schroeder)","","A Troll (Trevor Farkas)","","Developed by:","", "HOLE IN THE WALL"};
 
 int c_done = 0;
 int c_row;
@@ -41,6 +41,30 @@ void roll_credits(int signum){
   c_row--;
   move(c_row, c_col);
   addstr(msg[2]);
+  
+  c_row--;
+  move(c_row, c_col);
+  addstr(msg[3]);
+  
+  c_row--;
+  move(c_row, c_col);
+  addstr(msg[4]);
+  
+  c_row--;
+  move(c_row, c_col);
+  addstr(msg[5]);
+  
+  c_row--;
+  move(c_row, c_col);
+  addstr(msg[6]);
+  
+  c_row--;
+  move(c_row, c_col);
+  addstr(msg[7]);
+  
+  c_row--;
+  move(c_row, c_col);
+  addstr(msg[8]);
 
   refresh();
 
