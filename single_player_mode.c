@@ -108,7 +108,7 @@ void single_player_mode(){
   addstr("Congrats your score is: ");
   addstr(score_str);
   refresh();
-  sleep(2)
+  sleep(2);
 
 }
 
