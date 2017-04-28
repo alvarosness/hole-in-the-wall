@@ -137,7 +137,7 @@ void save_score(char * score){
   
   echo();
   
-  scorebrd = open("scoreboard.txt", O_APPEND);
+  scorebrd = open("scoreboard.txt", O_RDWR);
       if (fgets(pastScore, 3, scorebrd) == NULL){
          clear();
           mvaddstr(LINES/3, COLS/2 - 10, "Congratulations! You have beaten the high score! Please enter your initials");
@@ -154,7 +154,11 @@ void save_score(char * score){
           input = getch();
           initials[2] = input;
           clear();
-          fputs(score + initials);
+          
+          fseek(scorebrd, 0, SEEK_SET);
+          fputs(score, scorebrd);
+          fputs(" ", scorebrd);
+          fputs(initials, scorebrd);
           
       }
       else{
@@ -174,7 +178,11 @@ void save_score(char * score){
             input = getch();
             initials[2] = input;
             clear();
-            fputs(score + initials);
+            
+            fseek(scorebrd, 0, SEEK_SET);
+            fputs(score, scorebrd);
+            fputs(" ", scorebrd);
+            fputs(initials, scorebrd);
       }
   }
   
