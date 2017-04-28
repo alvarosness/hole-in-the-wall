@@ -18,8 +18,6 @@ void create_map(char map[][2000]){
 		for(row = 0; row < LINES; row++)
 			map[row][col] = ' ';
 
-  for(col = 0; col < 22; col++)
-     map[start_y][start_x + col] = *(entry + col);
 
   for(col = 0; col < 2000; col++)
   {
