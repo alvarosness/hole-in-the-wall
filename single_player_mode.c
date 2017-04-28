@@ -125,7 +125,7 @@ void on_alarm(int signum){
   mvflag = 1;
 }
 void save_score(char * score){
-  FILE *scorebrd;
+  int scorebrd;
   char pastScore[4];
   int i;
   scorebrd = open("scoreboard.txt", O_RDWR);
