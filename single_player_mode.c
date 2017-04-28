@@ -4,7 +4,6 @@
 #include <signal.h>
 #include <sys/time.h>
 #include <fcntl.h>
-#include <string.h>
 
 int mvflag;
 
@@ -104,7 +103,6 @@ void single_player_mode(){
 
   // Ignore alarms once the game ends
   signal(SIGALRM, SIG_IGN);
-  save_score(score_str);
 }
 
 void score_to_string(char * str, int score){
@@ -125,69 +123,13 @@ void on_alarm(int signum){
   signal(SIGALRM, on_alarm);
   mvflag = 1;
 }
-void save_score(char * score){
-  int scorebrd;
-  char pastScore[4];
-  char initials [4];
-  char input;
-  int i;
-  nocbreak();
-  nodelay(stdscr, FALSE);
-  scrollok(stdscr, FALSE);
-  echo();
+void save_score(int score){
   
-  scorebrd = open("scoreboard.txt", O_RDWR | O_CREAT);
-      if (read(scorebrd, pastScore, 4*sizeof(char)) == NULL){
-         clear();
-          mvaddstr(LINES/3, COLS/2 - 10, "Congratulations! You have beaten the high score! Please enter your initials");
-          mvaddstr(LINES/3+1, COLS/2 - 10, "First Letter:");
-          refresh();
-          input = getch();
-          initials[0] = input;
-          mvaddstr(LINES/3+2, COLS/2 - 10, "Second Letter:");
-          refresh();
-          input = getch();
-          initials[1] = input;
-          mvaddstr(LINES/3+3, COLS/2 - 10, "Third Letter:");
-          refresh();
-          input = getch();
-          initials[2] = input;
-          clear();
-          
-          lseek(scorebrd, 0, SEEK_SET);
-          write(scorebrd, score, 4*sizeof(char));
-          write(scorebrd, ' ', sizeof(char));
-          write(scorebrd, initials, 4*sizeof(char));
-          
-      }
-      else{
-          if(strcmp(score, pastScore) >0 || strcmp(score, pastScore) == 0){
-            clear();
-            mvaddstr(LINES/3, COLS/2 - 10, "Congratulations! You have beaten the high score! Please enter your initials");
-            mvaddstr(LINES/3+1, COLS/2 - 10, "First Letter:");
-            refresh();
-            input = getch();
-            initials[0] = input;
-            mvaddstr(LINES/3+2, COLS/2 - 10, "Second Letter:");
-            refresh();
-            input = getch();
-            initials[1] = input;
-            mvaddstr(LINES/3+3, COLS/2 - 10, "Third Letter:");
-            refresh();
-            input = getch();
-            initials[2] = input;
-            clear();
-            
-            lseek(scorebrd, 0, SEEK_SET);
-            write(scorebrd, score, 4*sizeof(char));
-            write(scorebrd, ' ', sizeof(char));
-            write(scorebrd, initials, 4*sizeof(char));
-      }
-  }
   
-  noecho();
-  cbreak();
-  nodelay(stdscr, TRUE);
-  scrollok(stdscr, TRUE);
+  
+  
+  
+  
+  
 
 }

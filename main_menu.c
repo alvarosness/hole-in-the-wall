@@ -1,5 +1,5 @@
 #include <curses.h>
-//menu showing all options for user
+
 int main_menu(){
 	clear();
 
@@ -13,12 +13,9 @@ int main_menu(){
 	addstr("(P)lay");
 
 	move(row+2, col);
-	addstr("(S)coreboard");
-
-	move(row+3, col);
 	addstr("(C)redits");
 
-	move(row+4, col);
+	move(row+3, col);
 	addstr("(Q)uit");
 
 	move(LINES-1,0);
