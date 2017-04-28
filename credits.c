@@ -2,7 +2,7 @@
 #include <curses.h>
 #include <signal.h>
 
-char msg[][100] = {"Another Idiot (Alvaro Esperanca)","","An Idiot (Johnathon Schroeder)","","A Troll (Trevor Farkas)","","Developed by:","", "HOLE IN THE WALL"};
+char msg[][100] = {"Another Idiot (Alvaro Esperanca)","An Idiot (Johnathon Schroeder)","A Troll (Trevor Farkas)","","Developed by:","", "HOLE IN THE WALL"};
 
 int c_done = 0;
 int c_row;
@@ -31,43 +31,23 @@ void roll_credits(int signum){
   clear();
 
   c_row--;
-  move(c_row, c_col);
+  move(c_row+0, c_col);
   addstr(msg[0]);
-
-  c_row--;
-  move(c_row, c_col);
+  move(c_row+1, c_col);
   addstr(msg[1]);
-
-  c_row--;
-  move(c_row, c_col);
+  move(c_row+2, c_col);
   addstr(msg[2]);
-  
-  c_row--;
-  move(c_row, c_col);
+  move(c_row+3, c_col);
   addstr(msg[3]);
-  
-  c_row--;
-  move(c_row, c_col);
+  move(c_row+4, c_col);
   addstr(msg[4]);
-  
-  c_row--;
-  move(c_row, c_col);
+  move(c_row+5, c_col);
   addstr(msg[5]);
-  
-  c_row--;
-  move(c_row, c_col);
+  move(c_row+6, c_col);
   addstr(msg[6]);
-  
-  c_row--;
-  move(c_row, c_col);
-  addstr(msg[7]);
-  
-  c_row--;
-  move(c_row, c_col);
-  addstr(msg[8]);
 
   refresh();
 
-  if(c_row <= 0)
+  if(c_row <= -6)
     c_done = 1;
 }
