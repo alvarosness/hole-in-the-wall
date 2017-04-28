@@ -30,9 +30,9 @@ void create_map(char map[][2000]){
     else if(col < 100){
       if (col % 10 == 0 )
       {
-        for( row = 3; row < LINES; row++)
+        for( row = 3; row < LINES; row++) //Building walls
           map[row][col] = WALL_SPRITE;
-        for(count = 0; count < 5; count++)
+        for(count = 0; count < 5; count++) //Making spaces
           map[rand()%LINES][col] = ' ';
       }
     }
@@ -40,9 +40,9 @@ void create_map(char map[][2000]){
     else if(col <200){
       if (col % 10 == 0 )
         {
-          for( row = 3; row < LINES; row++)
+          for( row = 3; row < LINES; row++) //Building walls
             map[row][col] = WALL_SPRITE;
-          for(count = 0; count < 4; count++)
+          for(count = 0; count < 4; count++) //Making spaces
             map[rand()%LINES][col] = ' ';
         }
     }
@@ -50,9 +50,9 @@ void create_map(char map[][2000]){
     else if(col <300){
       if (col % 8 == 0 )
         {
-          for( row = 3; row < LINES; row++)
+          for( row = 3; row < LINES; row++) //Building walls
             map[row][col] = WALL_SPRITE;
-          for(count = 0; count < 4; count++)
+          for(count = 0; count < 4; count++) //Making spaces
             map[rand()%LINES][col] = ' ';
         }
     }
@@ -60,9 +60,9 @@ void create_map(char map[][2000]){
     else if(col <400){
       if (col % 8 == 0 )
         {
-          for( row = 3; row < LINES; row++)
+          for( row = 3; row < LINES; row++) //Building walls
             map[row][col] = WALL_SPRITE;
-          for(count = 0; count < 3; count++)
+          for(count = 0; count < 3; count++) //Making spaces
             map[rand()%LINES][col] = ' ';
         }
     }
@@ -70,9 +70,9 @@ void create_map(char map[][2000]){
     else if(col <600){
       if (col % 6 == 0 )
         {
-          for( row = 3; row < LINES; row++)
+          for( row = 3; row < LINES; row++) //Building walls
             map[row][col] = WALL_SPRITE;
-          for(count = 0; count < 4; count++)
+          for(count = 0; count < 4; count++) //Making spaces
             map[rand()%LINES][col] = ' ';
         }
     }
@@ -80,9 +80,9 @@ void create_map(char map[][2000]){
     else if(col <1000){
       if (col % 5 == 0 )
         {
-          for( row = 3; row < LINES; row++)
+          for( row = 3; row < LINES; row++) //Building walls
             map[row][col] = WALL_SPRITE;
-          for(count = 0; count < 2; count++)
+          for(count = 0; count < 2; count++) //Making spaces
             map[rand()%LINES][col] = ' ';
         }
     }
